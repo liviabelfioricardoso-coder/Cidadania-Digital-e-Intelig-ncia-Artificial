@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consciência Digital: IA e Deepfakes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Cidadania Digital</h1>
+        <button id="btn-tema" class="btn-secundario">Alternar Modo Escuro</button>
+    </header>
+
+    <main>
+        
+        <section id="introducao">
+            <h2>O Impacto das Deepfakes na Sociedade</h2>
+            <p>As <strong>deepfakes</strong> são mídias sintetizadas por Inteligência Artificial que podem simular rostos e vozes com precisão assustadora. Quando usadas de forma maliciosa, espalham desinformação automatizada, afetando a confiança nas instituições e na democracia. Desenvolver o pensamento crítico é nossa maior defesa.</p>
+        </section>
+
+        <hr>
+
+        <section id="quiz-container">
+            <h2>Desafio: Você sabe identificar uma Deepfake?</h2>
+            <p>Analise a afirmação abaixo e responda para testar seus conhecimentos:</p>
+            
+            <form id="form-quiz">
+                <div class="pergunta-grupo">
+                    <p class="enunciado">"Mídias geradas por IA nunca possuem falhas visíveis, como piscadas não naturais ou sombras desalinhadas."</p>
+                    
+                    <label>
+                        <input type="radio" name="resposta" value="verdadeiro" required> Verdadeiro
+                    </label>
+                    <label>
+                        <input type="radio" name="resposta" value="falso"> Falso
+                    </label>
+                </div>
+
+                <button type="submit" id="btn-enviar">Verificar Resposta</button>
+            </form>
+
+            <div id="feedback" class="escondido">
+                <p id="feedback-texto"></p>
+                <span id="contador-tentativas">Tentativas: 0</span>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Portal Cidadania Digital. Desenvolvido para fins educacionais.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
