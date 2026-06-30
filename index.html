@@ -3,36 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consciência Digital: IA e Deepfakes</title>
+    <title>Portal Cidadania Digital 2026</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Cidadania Digital & IA</h1>
-        <button id="toggle-dark-mode" aria-label="Alternar modo escuro">🌓 Modo Escuro</button>
+        <div class="logo">🛡️ Consciência Digital</div>
+        <nav>
+            <button id="toggle-dark-mode" aria-label="Alternar modo visual">🌓 Modo Escuro</button>
+        </nav>
     </header>
 
     <main>
-        <section id="introducao">
-            <h2>O Impacto das Deepfakes</h2>
-            <p>Descubra como identificar mídias manipuladas por IA e proteja-se contra a desinformação automatizada.</p>
+        <section id="conteudo-educativo">
+            <h2>O Impacto das Deepfakes e da Desinformação</h2>
+            <p>As <strong>deepfakes</strong> utilizam algoritmos de Inteligência Artificial para sintetizar imagens, vídeos ou áudios hiper-realistas. Quando usadas para desinformação automatizada, podem manipular debates públicos e afetar a cidadania digital.</p>
+            <div class="cards-diretrizes">
+                <div class="card">
+                    <h3>👁️ Analise os Olhos</h3>
+                    <p>Falta de piscadas naturais ou reflexos inconsistentes são indícios de manipulação por IA.</p>
+                </div>
+                <div class="card">
+                    <h3>🎵 Sincronia de Áudio</h3>
+                    <p>Preste atenção se os movimentos dos lábios coincidem perfeitamente com a fala.</p>
+                </div>
+            </div>
         </section>
 
-        <section id="quiz-section">
-            <h2>Quiz Anti-Desinformação</h2>
+        <section id="quiz-interativo">
+            <h2>Desafio Prático: Você sabe identificar?</h2>
+            <p>Clique nas alternativas para testar seus conhecimentos. Seu progresso será calculado em tempo real.</p>
+            
             <div id="quiz-container">
-                <p id="pergunta">Uma deepfake é sempre um vídeo de alta qualidade e impossível de detectar visualmente?</p>
-                <div class="options">
-                    <button class="quiz-btn" data-correct="false">Verdadeiro</button>
-                    <button class="quiz-btn" data-correct="true">Falso</button>
+                <div class="pergunta-bloco">
+                    <p><strong>Questão 1:</strong> Ferramentas automatizadas de IA podem criar perfis falsos que espalham notícias falsas em massa?</p>
+                    <div class="options">
+                        <button class="quiz-btn" data-correct="true">Sim, isso é desinformação automatizada</button>
+                        <button class="quiz-btn" data-correct="false">Não, a IA só cria imagens</button>
+                    </div>
                 </div>
+                
                 <p id="quiz-feedback" class="hidden"></p>
+                <p id="placar">Pontuação Atual: <span id="pontos">0</span> de 10 pontos</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 - Desenvolvido para o Projeto Cidadania Digital.</p>
+        <p>&copy; 2026 Projeto Cidadania Digital. Conteúdo 100% Autoral.</p>
     </footer>
 
     <script src="js/script.js"></script>
