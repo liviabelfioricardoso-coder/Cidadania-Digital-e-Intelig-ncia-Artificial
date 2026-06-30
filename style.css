@@ -1,83 +1,168 @@
-/* Variáveis de Ambiente e Paleta Tecnológica */
+/* Definição de Variáveis de Cores (Padrão: Modo Claro) */
 :root {
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
-    --text-main: #0f172a;
-    --primary: #2563eb;
-    --accent: #10b981;
-    --border-color: #e2e8f0;
+    --bg-color: #f4f7f6;
+    --card-bg: #ffffff;
+    --text-color: #2c3e50;
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --error-color: #e74c3c;
+    --header-bg: #1a252f;
+    --header-text: #ffffff;
 }
 
-[data-theme="dark"] {
-    --bg-main: #0f172a;
-    --bg-card: #1e293b;
-    --text-main: #f8fafc;
-    --primary: #3b82f6;
-    --accent: #34d399;
-    --border-color: #334155;
-}
-
-body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
-    font-family: system-ui, -apple-system, sans-serif;
+/* Configurações Globais */
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Cabeçalho com Flexbox */
 header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 1.5rem;
+}
+
+.header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 2rem;
-    background-color: var(--bg-card);
-    border-bottom: 1px solid var(--border-color);
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
-/* Layout com Flexbox nos Cards Informativos */
-.cards-diretrizes {
-    display: flex;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
+/* Botão de Acessibilidade */
+.btn-accessibility {
+    background-color: transparent;
+    color: var(--header-text);
+    border: 2px solid var(--header-text);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
 }
 
+.btn-accessibility:hover {
+    background-color: var(--header-text);
+    color: var(--header-bg);
+}
+
+/* Main Container */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Estilização dos Cards com Flexbox interno */
 .card {
-    flex: 1;
-    padding: 1.5rem;
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-/* Efeitos de Feedback Visual (Critério de Usabilidade) */
-button {
-    background-color: var(--primary);
+.card h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-position: inside;
+    margin-top: 0.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+/* Formulário do Quiz */
+#quiz-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.radio-option:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.btn-submit {
+    background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 6px;
-    font-weight: 600;
+    padding: 0.75rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 4px;
     cursor: pointer;
-    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-button:hover {
-    opacity: 0.9;
-    transform: translateY(-2px);
+.btn-submit:hover {
+    background-color: #2980b9;
 }
 
-/* Responsividade Completa via Media Queries */
-@media (max-width: 768px) {
-    .cards-diretrizes {
-        flex-direction: column;
-    }
-    
-    header {
-        flex-direction: column;
-        gap: 1rem;
-    }
+/* Feedback do JavaScript */
+.feedback-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-align: center;
 }
 
-.hidden { display: none; }
+.feedback-box.correct {
+    background-color: rgba(46, 204, 113, 0.2);
+    color: #27ae60;
+    border: 1px solid var(--secondary-color);
+}
+
+.feedback-box.incorrect {
+    background-color: rgba(231, 76, 60, 0.2);
+    color: #c0392b;
+    border: 1px solid var(--error-color);
+}
+
+.hidden {
+    display: none;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--header-bg);
+    color: #95a5a6;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+
+/* --- CLASSE DO MODO ESCURO (Invertendo as variáveis) --- */
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --text-color: #e0e0e0;
+    --primary-color: #64b5f6;
+    --header-bg: #000000;
+}
