@@ -1,51 +1,83 @@
-/* Variáveis para paleta de cores consistente (Segurança/Tecnologia) */
+/* Variáveis de Ambiente e Paleta Tecnológica */
 :root {
-    --bg-color: #f4f7f6;
-    --text-color: #1a1a1a;
-    --primary-color: #0070f3;
-    --card-bg: #ffffff;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --primary: #2563eb;
+    --accent: #10b981;
+    --border-color: #e2e8f0;
 }
 
 [data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --primary-color: #00dfa2;
-    --card-bg: #1e1e1e;
+    --bg-main: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f8fafc;
+    --primary: #3b82f6;
+    --accent: #34d399;
+    --border-color: #334155;
 }
 
 body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: system-ui, -apple-system, sans-serif;
     margin: 0;
-    transition: background-color 0.3s, color 0.3s;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Flexbox no Header e Layout */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: var(--card-bg);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1.5rem 2rem;
+    background-color: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
 }
 
-/* Efeito Hover Suave (Critério de Usabilidade Nível 4) */
+/* Layout com Flexbox nos Cards Informativos */
+.cards-diretrizes {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.card {
+    flex: 1;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* Efeitos de Feedback Visual (Critério de Usabilidade) */
 button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button:hover {
-    transform: scale(1.05);
+    opacity: 0.9;
+    transform: translateY(-2px);
 }
 
-/* Responsividade (Media Queries) */
+/* Responsividade Completa via Media Queries */
 @media (max-width: 768px) {
+    .cards-diretrizes {
+        flex-direction: column;
+    }
+    
     header {
         flex-direction: column;
-        gap: 15px;
-        text-align: center;
+        gap: 1rem;
     }
 }
+
+.hidden { display: none; }
