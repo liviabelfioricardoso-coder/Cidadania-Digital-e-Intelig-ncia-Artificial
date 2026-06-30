@@ -3,56 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Cidadania Digital 2026</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Consciência Digital: Deepfakes e Desinformação</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <header>
-        <div class="logo">🛡️ Consciência Digital</div>
-        <nav>
-            <button id="toggle-dark-mode" aria-label="Alternar modo visual">🌓 Modo Escuro</button>
-        </nav>
+        <div class="header-container">
+            <h1>Cidadania Digital 2026</h1>
+            <button id="toggle-dark-mode" class="btn-accessibility">Alternar Modo Escuro</button>
+        </div>
     </header>
 
     <main>
-        <section id="conteudo-educativo">
-            <h2>O Impacto das Deepfakes e da Desinformação</h2>
-            <p>As <strong>deepfakes</strong> utilizam algoritmos de Inteligência Artificial para sintetizar imagens, vídeos ou áudios hiper-realistas. Quando usadas para desinformação automatizada, podem manipular debates públicos e afetar a cidadania digital.</p>
-            <div class="cards-diretrizes">
-                <div class="card">
-                    <h3>👁️ Analise os Olhos</h3>
-                    <p>Falta de piscadas naturais ou reflexos inconsistentes são indícios de manipulação por IA.</p>
-                </div>
-                <div class="card">
-                    <h3>🎵 Sincronia de Áudio</h3>
-                    <p>Preste atenção se os movimentos dos lábios coincidem perfeitamente com a fala.</p>
-                </div>
-            </div>
+        <section id="introducao" class="card">
+            <h2>O que são Deepfakes?</h2>
+            <p>Deepfakes são mídias (vídeos, imagens ou áudios) manipuladas de forma profunda por Inteligência Artificial. Elas conseguem simular o rosto e a voz de pessoas reais com extrema precisão, sendo frequentemente utilizadas para espalhar desinformação automatizada na internet.</p>
         </section>
 
-        <section id="quiz-interativo">
-            <h2>Desafio Prático: Você sabe identificar?</h2>
-            <p>Clique nas alternativas para testar seus conhecimentos. Seu progresso será calculado em tempo real.</p>
+        <section id="dicas" class="card">
+            <h2>Como Identificar Mídias Manipuladas</h2>
+            <ul>
+                <li><strong>Piscadas não naturais:</strong> Muitas vezes a IA falha ao reproduzir o ato de piscar os olhos de forma realista.</li>
+                <li><strong>Falhas nos cantos da boca e cabelos:</strong> Bordas borradas ou texturas estranhas ao redor do rosto.</li>
+                <li><strong>Inconsistência de iluminação:</strong> Sombras e reflexos que não condizem com o ambiente do vídeo.</li>
+            </ul>
+        </section>
+
+        <section id="quiz-section" class="card">
+            <h2>Desafio Interativo: Você sabe detectar a mentira?</h2>
+            <p>Se você receber um vídeo bombástico de uma figura pública dizendo algo absurdo em uma rede social nova, qual deve ser sua primeira reação?</p>
             
-            <div id="quiz-container">
-                <div class="pergunta-bloco">
-                    <p><strong>Questão 1:</strong> Ferramentas automatizadas de IA podem criar perfis falsos que espalham notícias falsas em massa?</p>
-                    <div class="options">
-                        <button class="quiz-btn" data-correct="true">Sim, isso é desinformação automatizada</button>
-                        <button class="quiz-btn" data-correct="false">Não, a IA só cria imagens</button>
-                    </div>
+            <form id="quiz-form">
+                <div class="quiz-options">
+                    <label class="radio-option">
+                        <input type="radio" name="quiz-answer" value="errada1">
+                        <span>Compartilhar imediatamente nos grupos de família para alertar a todos.</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="quiz-answer" value="correta">
+                        <span>Desconfiar, não compartilhar e pesquisar o assunto em veículos de imprensa confiáveis.</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="quiz-answer" value="errada2">
+                        <span>Acreditar piamente, afinal, se está em vídeo, só pode ser real.</span>
+                    </label>
                 </div>
-                
-                <p id="quiz-feedback" class="hidden"></p>
-                <p id="placar">Pontuação Atual: <span id="pontos">0</span> de 10 pontos</p>
-            </div>
+                <button type="submit" class="btn-submit">Verificar Resposta</button>
+            </form>
+
+            <div id="quiz-feedback" class="feedback-box hidden"></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Projeto Cidadania Digital. Conteúdo 100% Autoral.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
+        <p>&copy; 2026 - Projeto de Educação Digital e IA. Desenvolvido para fins educacionais.</p>
+        <p>Tag do Projeto
