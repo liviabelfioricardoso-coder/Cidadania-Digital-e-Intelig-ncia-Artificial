@@ -7,50 +7,32 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <header>
-        <h1>Cidadania Digital</h1>
-        <button id="btn-tema" class="btn-secundario">Alternar Modo Escuro</button>
+        <h1>Cidadania Digital & IA</h1>
+        <button id="toggle-dark-mode" aria-label="Alternar modo escuro">🌓 Modo Escuro</button>
     </header>
 
     <main>
-        
         <section id="introducao">
-            <h2>O Impacto das Deepfakes na Sociedade</h2>
-            <p>As <strong>deepfakes</strong> são mídias sintetizadas por Inteligência Artificial que podem simular rostos e vozes com precisão assustadora. Quando usadas de forma maliciosa, espalham desinformação automatizada, afetando a confiança nas instituições e na democracia. Desenvolver o pensamento crítico é nossa maior defesa.</p>
+            <h2>O Impacto das Deepfakes</h2>
+            <p>Descubra como identificar mídias manipuladas por IA e proteja-se contra a desinformação automatizada.</p>
         </section>
 
-        <hr>
-
-        <section id="quiz-container">
-            <h2>Desafio: Você sabe identificar uma Deepfake?</h2>
-            <p>Analise a afirmação abaixo e responda para testar seus conhecimentos:</p>
-            
-            <form id="form-quiz">
-                <div class="pergunta-grupo">
-                    <p class="enunciado">"Mídias geradas por IA nunca possuem falhas visíveis, como piscadas não naturais ou sombras desalinhadas."</p>
-                    
-                    <label>
-                        <input type="radio" name="resposta" value="verdadeiro" required> Verdadeiro
-                    </label>
-                    <label>
-                        <input type="radio" name="resposta" value="falso"> Falso
-                    </label>
+        <section id="quiz-section">
+            <h2>Quiz Anti-Desinformação</h2>
+            <div id="quiz-container">
+                <p id="pergunta">Uma deepfake é sempre um vídeo de alta qualidade e impossível de detectar visualmente?</p>
+                <div class="options">
+                    <button class="quiz-btn" data-correct="false">Verdadeiro</button>
+                    <button class="quiz-btn" data-correct="true">Falso</button>
                 </div>
-
-                <button type="submit" id="btn-enviar">Verificar Resposta</button>
-            </form>
-
-            <div id="feedback" class="escondido">
-                <p id="feedback-texto"></p>
-                <span id="contador-tentativas">Tentativas: 0</span>
+                <p id="quiz-feedback" class="hidden"></p>
             </div>
         </section>
-
     </main>
 
     <footer>
-        <p>&copy; 2026 Portal Cidadania Digital. Desenvolvido para fins educacionais.</p>
+        <p>&copy; 2026 - Desenvolvido para o Projeto Cidadania Digital.</p>
     </footer>
 
     <script src="js/script.js"></script>
