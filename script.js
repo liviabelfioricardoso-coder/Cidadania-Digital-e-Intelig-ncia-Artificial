@@ -1,40 +1,41 @@
-// Gerenciador de Estado do Modo Escuro
-const toggleBtn = document.getElementById('toggle-dark-mode');
-toggleBtn.addEventListener('click', () => {
-    const isDark = document.body.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-        document.body.removeAttribute('data-theme');
-    } else {
-        document.body.setAttribute('data-theme', 'dark');
-    }
-});
+// Aguarda o carregamento completo do DOM
+document.addEventListener('DOMContentLoaded', () => {
 
-// Lógica Computacional do Quiz (Processamento de Informações)
-let pontuacaoTotal = 0; // Variável para processar a informação de estado
-const pontosExibicao = document.getElementById('pontos');
-const feedback = document.getElementById('quiz-feedback');
-const botoesQuiz = document.querySelectorAll('.quiz-btn');
+    // --- FUNCIONALIDADE 1: MODO ESCURO (Acessibilidade) ---
+    const btnDarkMode = document.getElementById('toggle-dark-mode');
+    
+    btnDarkMode.addEventListener('click', () => {
+        // Alterna a classe 'dark-mode' no elemento body
+        document.body.classList.toggle('dark-mode');
+    });
 
-botoesQuiz.forEach(botao => {
-    botao.addEventListener('click', (evento) => {
-        const respostaUsuario = evento.target.getAttribute('data-correct') === 'true';
-        
-        // Desabilita os botões após a escolha para evitar cliques repetidos
-        botoesQuiz.forEach(btn => btn.disabled = true);
+    // --- FUNCIONALIDADE 2: VALIDADOR DO QUIZ ANTI-DESINFORMAÇÃO ---
+    const quizForm = document.getElementById('quiz-form');
+    const quizFeedback = document.getElementById('quiz-feedback');
 
-        // Processamento lógico antes de renderizar na tela
-        if (respostaUsuario) {
-            pontuacaoTotal += 10;
-            feedback.textContent = "🎉 Excelente! Bots automatizados e IA gerativa são amplamente usados para inflar narrativas falsas.";
-            feedback.style.color = "var(--accent)";
-        } else {
-            pontuacaoTotal = 0;
-            feedback.textContent = "⚠️ Ops! Lembre-se de que a IA de texto e automação de redes sociais também faz parte do ecossistema da desinformação.";
-            feedback.style.color = "#ef4444";
+    quizForm.addEventListener('submit', (event) => {
+        // Impede a página de recarregar ao enviar o formulário
+        event.preventDefault();
+
+        // Captura a opção selecionada pelo usuário
+        const selectedOption = quizForm.querySelector('input[name="quiz-answer"]:checked');
+
+        // Validação caso o usuário clique sem selecionar nada
+        if (!selectedOption) {
+            quizFeedback.textContent = "Por favor, selecione uma alternativa antes de enviar!";
+            quizFeedback.className = "feedback-box incorrect"; // Aplica estilo de erro
+            return;
         }
 
-        // Atualização dinâmica do DOM baseada no processamento anterior
-        pontosExibicao.textContent = pontuacaoTotal;
-        feedback.classList.remove('hidden');
+        // Processa a resposta usando variáveis lógicas
+        const userAnswer = selectedOption.value;
+
+        if (userAnswer === 'correta') {
+            quizFeedback.textContent = "Parabéns! Você demonstrou uma excelente atitude de Cidadania Digital. Sempre verifique as fontes antes de repassar uma informação.";
+            quizFeedback.className = "feedback-box correct"; // Aplica estilo de acerto
+        } else {
+            quizFeedback.textContent = "Resposta incorreta. Compartilhar sem checar ou acreditar de imediato ajuda a espalhar a desinformação automatizada. Lembre-se sempre de duvidar e checar canais oficiais.";
+            quizFeedback.className = "feedback-box incorrect"; // Aplica estilo de erro
+        }
     });
 });
